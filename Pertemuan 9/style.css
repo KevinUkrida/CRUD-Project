@@ -1,0 +1,221 @@
+/* ===== Reset & Variabel (palet lembut) ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --primary: #4a6785;
+    --primary-dark: #3b5470;
+    --primary-soft: #e8eef4;
+    --danger: #b95c55;
+    --danger-dark: #a14c46;
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #2b3440;
+    --muted: #6b7785;
+    --border: #e3e8ed;
+    --radius: 10px;
+    --shadow: 0 1px 3px rgba(30, 41, 59, 0.06), 0 4px 14px rgba(30, 41, 59, 0.04);
+}
+
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+a { text-decoration: none; }
+
+/* ===== Navbar ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px 32px;
+    background: var(--card);
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+.nav-brand { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+.nav-menu { display: flex; gap: 4px; flex: 1; }
+.nav-menu a {
+    color: var(--muted);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-menu a:hover { background: var(--bg); color: var(--text); }
+.nav-menu a.active { background: var(--primary-soft); color: var(--primary); font-weight: 600; }
+.nav-user { display: flex; align-items: center; gap: 14px; font-size: 0.92rem; color: var(--muted); }
+.nav-user strong { color: var(--text); }
+
+/* ===== Layout ===== */
+.container { max-width: 1000px; margin: 32px auto; padding: 0 20px; }
+.container-narrow { max-width: 640px; }
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+.page-header h1 { font-size: 1.6rem; font-weight: 600; }
+.muted { color: var(--muted); font-size: 0.93rem; }
+
+/* ===== Card ===== */
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+.card-pad { padding: 28px; }
+
+.stat-card {
+    display: inline-flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    padding: 14px 24px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+.stat-number { font-size: 1.8rem; font-weight: 700; line-height: 1.1; color: var(--primary); }
+.stat-label { font-size: 0.82rem; color: var(--muted); }
+
+/* ===== Tabel ===== */
+.table-wrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; }
+.table th {
+    background: #f8fafb;
+    text-align: left;
+    padding: 13px 18px;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+}
+.table td { padding: 13px 18px; border-bottom: 1px solid var(--border); font-size: 0.94rem; }
+.table tbody tr:last-child td { border-bottom: none; }
+.table tbody tr:hover { background: #f8fafb; }
+
+.badge {
+    background: var(--primary-soft);
+    color: var(--primary);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.84rem;
+    font-family: Consolas, monospace;
+}
+.empty { text-align: center; padding: 48px 20px; color: var(--muted); }
+
+/* ===== Tombol ===== */
+.btn {
+    display: inline-block;
+    padding: 9px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.93rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-secondary { background: #fff; color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { background: var(--bg); }
+.btn-danger { background: transparent; color: var(--danger); border: 1px solid #e6c9c6; }
+.btn-danger:hover { background: var(--danger); color: #fff; border-color: var(--danger); }
+.btn-sm { padding: 6px 12px; font-size: 0.84rem; }
+.btn-block { width: 100%; padding: 11px; }
+
+/* ===== Form ===== */
+.form-group { margin-bottom: 18px; }
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.88rem;
+}
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 13px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.94rem;
+    font-family: inherit;
+    background: #fff;
+    color: var(--text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(74, 103, 133, 0.15);
+}
+
+/* ===== Alert ===== */
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+.alert-error {
+    background: #fbf1f0;
+    color: #8f3f39;
+    border: 1px solid #efd5d2;
+}
+.alert ul { margin: 6px 0 0 20px; }
+
+/* ===== Halaman Login ===== */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(160deg, #eef2f6 0%, #f7f8fa 100%);
+}
+.auth-card {
+    width: 100%;
+    max-width: 390px;
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 38px 34px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(30, 41, 59, 0.08);
+    text-align: center;
+}
+.auth-logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    background: var(--primary-soft);
+    border-radius: 50%;
+}
+.auth-card h1 { font-size: 1.5rem; font-weight: 600; margin-bottom: 4px; }
+.auth-sub { color: var(--muted); margin-bottom: 24px; font-size: 0.93rem; }
+.auth-card form { text-align: left; }
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+    .navbar { padding: 12px 16px; gap: 12px; }
+    .nav-menu { order: 3; width: 100%; flex: none; }
+    .card-pad { padding: 20px; }
+    .auth-card { padding: 30px 22px; }
+}
